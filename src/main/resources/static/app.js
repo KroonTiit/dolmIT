@@ -1,0 +1,27 @@
+var myApp= angular.module('myApp',['ngRoute']);
+myApp.config(function($routeProvider){
+	$routeProvider.when('/search',{
+		controller:'PakiautomaatController',
+		templateUrl:'view/search.html'
+	})
+	.when('/add',{
+		controller:'PakiautomaatController',
+		templateUrl:'view/form.html'
+	})
+	.when('/show',{
+		controller:'PakiautomaatController',
+		templateUrl:'view/pakimasin.html'
+	})
+	.when('/searchResults',{
+		controller:'PakiautomaatController',
+		templateUrl:'view/searchResults.html'
+	})
+	.when('/open10h',{
+		controller:'PakiautomaatController',
+		templateUrl:'view/open10h.html'
+	})
+	.when('/businessHoursOpen',{
+		controller:'PakiautomaatController',
+		templateUrl:'view/businessHoursOpen.html'
+	})
+});

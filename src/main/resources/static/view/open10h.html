@@ -1,0 +1,14 @@
+<div ng-init="getOpen10h()">
+  <div class="row marketing" >
+    <div class="col-6 col-lg-4" ng-repeat="open in open10h">
+      <h1>{{open.name}}</h1>
+      <p>Riik: {{open.riik}}</p>
+      <p ng-init="getCountrys(result.riik)">
+      	<p ng-repeat="country in countrys">Pealinn: {{country.capital}}</p>
+      </p>
+      <p>Avatud: {{pakiMasin.openfrom==0 && pakiMasin.closedfrom ==0 ? "24h": ""+pakiMasin.openfrom+":00 - "+pakiMasin.closedfrom+":00"}}</p>
+      <p>Aktiivne: {{pakiMasin.active==false ? "Ei":"Jah"}}</p>
+      <p>Skoor: {{open.skoor}}</p>
+    </div>
+  </div>
+</div>

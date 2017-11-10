@@ -1,0 +1,14 @@
+<div ng-init="getBusinessHoursOpen()">
+  <div class="row marketing" >
+    <div class="col-6 col-lg-4" ng-repeat="result in businessOpen">
+      <h1>{{result.name}}</h1>
+      <p>Riik: {{result.riik}}</p>
+      <p ng-init="getCountrys(result.riik)">
+      	<p ng-repeat="country in countrys">Pealinn: {{country.capital}}</p>
+      </p>
+      <p>Avatud: {{result.openfrom}}:00 - {{result.closedfrom}}:00</p>
+      <p>Aktiivne: {{result.active}}</p>
+      <p>Skoor: {{result.skoor}}</p>
+    </div>
+  </div>
+</div>

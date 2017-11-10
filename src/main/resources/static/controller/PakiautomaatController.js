@@ -1,0 +1,62 @@
+var myApp= angular.module('myApp');
+myApp.controller('PakiautomaatController', ['$scope','$http','$location','$routeParams',function($scope,$http,$location,$routeParams){
+    console.log("controller loaded");
+    $scope.getPakiMasinad=function(){
+        $http.get('/pakiautomaat').success(function(response){
+            $scope.pakiMasinad=response;
+        })
+    }
+    $scope.postPakiMasin=function(){
+        $http.post('/pakiautomaat', $scope.pakiMasin).success(function(response){
+        })
+        window.location.href="#/show";
+    }
+    $scope.patchPakiMasin=function(){
+        $http.get('/pakiautomaat').success(function(response){
+            $scope.pakiMasin=response;
+        })
+    }
+    $scope.putPakiMasin=function(){
+        $http.put('/pakiautomaat').success(function(response){
+            $scope.pakiMasin=response;
+        })
+    }
+    $scope.deletePakiMasin=function(){
+        $http.delete('/pakiautomaat').success(function(response){
+            $scope.pakiMasin=response;
+        })
+    }
+    $scope.getPakiMasinadBySkoor=function(){
+    	if ($scope.pakiMasin.active != null && $scope.pakiMasin.skoor != null) {
+    		$http.get('/pakiautomaat/search/'+$scope.pakiMasin.active+'&'+$scope.pakiMasin.skoor).success(function(response){
+            })
+            window.location.href="#/searchResults";
+    	}
+    }
+    $scope.getSearchResult=function(){ 
+    	$http.get('/pakiautomaat/returnSearchResult').success(function(response){
+    		$scope.searchResult=response;
+        })   
+    }
+    $scope.getCountrys=function(country){ 
+    	$http.get('https://restcountries.eu/rest/v2/name/'+country).success(function(response){
+    		$scope.countrys=response;
+        })   
+    }
+    $scope.businessHoursOpen=function(){ 
+    	window.location.href="#/businessHoursOpen";  
+    }
+    $scope.getBusinessHoursOpen=function(){ 
+    	$http.get('/pakiautomaat/openOnBusinessHours').success(function(response){
+    		$scope.businessOpen=response;
+        })  
+    }
+    $scope.open10h=function(){ 
+    	window.location.href="#/open10h";  
+    }
+    $scope.getOpen10h=function(){ 
+    	$http.get('/pakiautomaat/open10h').success(function(response){
+    		$scope.open10h=response;
+        }) 
+    }
+}]);

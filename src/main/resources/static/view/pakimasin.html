@@ -1,0 +1,11 @@
+<div ng-init="getPakiMasinad()">
+  <div class="row marketing" >
+    <div class="col-6 col-lg-4" ng-repeat="pakiMasin in pakiMasinad">
+      <h1>{{pakiMasin.name}}</h1>
+      <p>Riik: {{pakiMasin.riik}}</p>
+      <p>Avatud: {{pakiMasin.openfrom==0 && pakiMasin.closedfrom ==0 ? "24h": ""+pakiMasin.openfrom+":00 - "+pakiMasin.closedfrom+":00"}}</p>
+      <p>Aktiivne: {{pakiMasin.active==false ? "Ei":"Jah"}}</p>
+      <p>Skoor: {{pakiMasin.skoor}}</p>
+    </div>
+  </div>
+</div>

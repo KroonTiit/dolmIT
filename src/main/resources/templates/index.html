@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<div ng-app="myApp">
+  <head>
+    <meta charset="utf-8"></meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"></meta>
+    <meta name="description" content=""></meta>
+    <meta name="author" content=""></meta>
+    <title>Dolm</title>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous"></link>
+  </head>
+  <body>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-route.js"></script>
+  <script src="/app.js"></script>
+  <script src="/controller/PakiautomaatController.js"></script>
+    <div class="container">
+      <main role="main">
+        <div class="jumbotron">
+          <h1 class="display-3">Pakiautomaat</h1>
+          <div class="row marketing">
+            <p class="col-6 col-lg-4">
+              <a class="btn btn-lg btn-success" href="#/add" role="button">Lisa Pakiautomaat</a>
+            </p>
+            <p class="col-6 col-lg-4">
+              <a class="btn btn-lg btn-success" href="#/search" role="button">Otsi Pakiautomaate</a>
+            </p>
+            <p class="col-6 col-lg-4">
+              <a class="btn btn-lg btn-success" href="#/show" role="button">näita Pakiautomaate</a>
+            </p>
+          </div>
+        </div>
+      </main>
+    <div ng-view=""></div>
+      <footer class="footer">
+        <p>&copy; Tiit Kroon 2017</p>
+      </footer>
+    </div> <!-- /container -->
+  </body>
+  </div>
+</html>
+
+
